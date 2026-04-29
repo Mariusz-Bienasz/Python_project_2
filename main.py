@@ -18,14 +18,24 @@ import random
 #                 'LJS19A2', 'AKM7B', 'ELLB34', 'FULR4', 'ANGC3', 'WELNT15', 'EOO1',
 #                 'SAC19A22', 'AAP7B', 'ERBB3', 'FGR4', 'ACC4', 'GASNT14', 'ERSS4'])
 #
+# # a:
+# print("A: \n")
 # x = set_gene1.intersection(set_gene2).intersection(set_gene3)
 # print(x)
 #
-# print(set_gene1.intersection(set_gene2))
-# print(set_gene2.intersection(set_gene3))
-# print(set_gene1.intersection(set_gene3))
+# # b:
+# print("\n B: \n")
+# p12 = (set_gene1.intersection(set_gene2))
+# p23 = (set_gene2.intersection(set_gene3))
+# p13 = (set_gene1.intersection(set_gene3))
 #
-# print(x.difference(set_gene1.union(set_gene2).union(set_gene3)))
+# p = p12.union(p23).union(p13)
+# print(p.difference(x))
+#
+# # c:
+# print("\n C: \n")
+# all = set_gene1.union(set_gene2).union(set_gene3)
+# print(all.difference(p12).difference(p13).difference(p23))
 
 # ##########Zadanie 2
 # ### Sprawdź czy w poniższym zbiorze występuje gen 'FGFR4' oraz 'FGERA4', jeśli tak to wskaż index
@@ -147,10 +157,10 @@ import random
 # if var_float_delta < 0:
 #     print("Brak pierwiastków")
 # elif var_float_delta == 0:
-#     print((-var_int_b)/2*var_int_a)
+#     print((-var_int_b)/(2*var_int_a))
 # elif var_float_delta > 0:
-#     x1 = ((-var_int_b)-math.sqrt(var_float_delta))/2*var_int_a
-#     x2 = ((-var_int_b) + math.sqrt(var_float_delta)) / 2 * var_int_a
+#     x1 = (((-var_int_b)-math.sqrt(var_float_delta))/(2*var_int_a))
+#     x2 = (((-var_int_b) + math.sqrt(var_float_delta)) / (2 * var_int_a))
 #     print("x1: " + str(x1))
 #     print("x2: " + str(x2))
 
@@ -161,7 +171,11 @@ import random
 
 # result = []
 # for i in range(0, 1001):
-#     if i%2 == 0:
+#     even = True
+#     for j in str(i):
+#         if int(j) % 2 != 0:
+#             even = False
+#     if even == True:
 #         result.append(str(i))
 #
 # print(", ".join(result))
